@@ -1,0 +1,73 @@
+<HTML xmlns:ATA ="urn:schemas-microsoft-com:vml">
+<HEAD>
+<TITLE>3B</TITLE>
+<SCRIPT LANGUAGE="JScript" type="text/javascript" src="ATA/ATA.JS"></SCRIPT>
+</HEAD>
+<BODY>
+
+<font id="bbbbbb"></font>
+<SCRIPT LANGUAGE="JScript" type="text/javascript" src="ATA/ATA.0.JS"></SCRIPT>
+<SCRIPT LANGUAGE="JScript" type="text/javascript">
+var Ar3d = {};
+
+Ar3d["Model"] = {};
+Ar3d["Model"]["Gövde"] = [[0,50,0],[40,-30,0],[-40,-30,0]];
+Ar3d["Model"]["Sað Kanat"] = [[30,-10,0],[30,-30,20],[30,-30,0]];
+Ar3d["Model"]["Sol Kanat"] = [[-30,-10,0],[-30,-30,20],[-30,-30,0]];
+Ar3d["Model"]["Orta Kanat"] = [[0,0,0],[0,-30,30],[0,-30,0]];
+
+Ar3d["Doðal Açýlar"] = [0,0];
+Ar3d["Kalibrasyon"] = function(arr) {
+ var aci = this["XYZden Açýlara"](arr);
+ this["Doðal Açýlar"] = [-aci[0],-aci[1]];
+};
+
+var tyu = ATA["Belge Araçlarý"]["Gösterem"](document.body,400,500,10,10);
+var tyu2 = ATA["Belge Araçlarý"]["Gösterem"](document.body,400,500,410,10);
+
+var ucbyt = ATA["3 Boyutlu"]();
+ucbyt["Göz"]["Konumlandýr"](0,0,0);
+
+var dzlm = ucbyt["Düzlem"]();
+dzlm["Kur"](Ar3d["Model"]["Gövde"]);
+var dzlm1 = ucbyt["Düzlem"]();
+dzlm1["Kur"](Ar3d["Model"]["Sað Kanat"]);
+var dzlm2 = ucbyt["Düzlem"]();
+dzlm2["Kur"](Ar3d["Model"]["Sol Kanat"]);
+var dzlm3 = ucbyt["Düzlem"]();
+dzlm3["Kur"](Ar3d["Model"]["Orta Kanat"]);
+
+var tyuu = [tyu["Düzgün"](),tyu["Düzgün"](),tyu["Düzgün"](),tyu["Düzgün"]()];
+var tyuu2 = [tyu2["Düzgün"](),tyu2["Düzgün"](),tyu2["Düzgün"](),tyu2["Düzgün"]()];
+
+var srg = ATA["Belge Araçlarý"]["Giriþ Ýþlemi"]["Sürgü"](document.body,800,600,10,10);
+srg["Ýþlev"] = mmmmmmmm;
+
+var srg1 = ATA["Belge Araçlarý"]["Giriþ Ýþlemi"]["Sürgü"](document.body,318,18,355,5);
+srg1["Ýþlev"] = mmmmmmmm;
+
+var srg2 = ATA["Belge Araçlarý"]["Giriþ Ýþlemi"]["Sürgü"](document.body,318,18,355,25);
+srg2["Ýþlev"] = mmmmmmmm;
+
+var srg3 = ATA["Belge Araçlarý"]["Giriþ Ýþlemi"]["Sürgü"](document.body,318,18,355,45);
+srg3["Ýþlev"] = mmmmmmmm;
+
+function mmmmmmmm() {
+var aci = srg["Deðere Git"]();
+ucbyt["Göz"]["Konumlandýr"](srg1["Deðere Git"]()["X"]*200-100,srg2["Deðere Git"]()["X"]*200-100,srg3["Deðere Git"]()["X"]*200);
+//                                      nkt,        aci1,            aci2,            eyz, ktsy,mln,dzgn,dzgni,ucl
+dzlm["Merkezine Göre 2 Boyuta Dökümü"](ucbyt["Göz"],aci["Y"]*360-180,aci["X"]*360-180,1000,3,1000,tyuu[0],tyuu2[0],30);
+dzlm1["Merkezine Göre 2 Boyuta Dökümü"](ucbyt["Göz"],aci["Y"]*360-180,aci["X"]*360-180,1000,3,1000,tyuu[1],tyuu2[1],30);
+dzlm2["Merkezine Göre 2 Boyuta Dökümü"](ucbyt["Göz"],aci["Y"]*360-180,aci["X"]*360-180,1000,3,1000,tyuu[2],tyuu2[2],30);
+dzlm3["Merkezine Göre 2 Boyuta Dökümü"](ucbyt["Göz"],aci["Y"]*360-180,aci["X"]*360-180,1000,3,1000,tyuu[3],tyuu2[3],30);
+};
+
+srg["Deðer Gir"](0.5,0.5);
+srg1["Deðer Gir"](0,0);
+srg2["Deðer Gir"](0,0);
+srg3["Deðer Gir"](0,0);
+
+
+mmmmmmmm();
+</SCRIPT>
+</BODY>

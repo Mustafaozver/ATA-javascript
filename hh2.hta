@@ -1,0 +1,82 @@
+<HTML xmlns:ATA ="urn:schemas-microsoft-com:vml">
+<HEAD>
+<TITLE>3B</TITLE>
+<SCRIPT LANGUAGE="JScript" type="text/javascript" src="ATA/ATA.JS"></SCRIPT>
+</HEAD>
+<BODY>
+
+<font id="bbbbbb"></font>
+<SCRIPT LANGUAGE="JScript" type="text/javascript" src="ATA/ATA.0.JS"></SCRIPT>
+<SCRIPT LANGUAGE="JScript" type="text/javascript">
+
+ATA["Belge Araçlarý"]["Sürgülü Kutu Sayýsý"] = 0;
+ATA["Belge Araçlarý"]["Sürgülü Kutular"] = {};
+ATA["Belge Araçlarý"]["Sürügülü Kutu"] = function(gov,g,u,x,y){
+var pencere = {};
+pencere["Kimlik"] = "SURPEN_" + ATA["Rastgele"](11,1,false) + "_" + ATA["Belge Araçlarý"]["Sürgülü Kutu Sayýsý"] + "";
+ATA["Belge Araçlarý"]["Sürgülü Kutu Sayýsý"]++;
+pencere["DIV"] = ATA["Belge Nesnesi"]("DIV",gov);
+pencere["DIV"].style.position = "absolute";
+pencere["DIV"].style.left = x + "px";
+pencere["DIV"].style.top = y + "px";
+pencere["DIV"].style.width = g + "px";
+pencere["DIV"].style.height = u + "px";
+
+pencere["Gövde"] = ATA["Belge Nesnesi"]("DIV",pencere["DIV"]);
+pencere["Gövde"].style.position = "absolute";
+pencere["Gövde"].style.left = "0px";
+pencere["Gövde"].style.top = "0px";
+pencere["Gövde"].style.width = "100%";
+pencere["Gövde"].style.height = "100%";
+pencere["Gövde"].style.overflow = 'hidden';
+pencere["Gövde"].innerHTML = "<iframe src=\"file:///D:/Uygulamalar/0/Yeni%20Metin%20Belgesi%20(2).htm\" style=\"width:1000px;height:1000px;\">";
+
+pencere["Sürgü"] = ATA["Belge Araçlarý"]["Giriþ Ýþlemi"]["Sürgü"](pencere["DIV"],50,50,0,0);
+pencere["Sürgü"]["DIV"].style.display = "none";
+pencere["Sürgü"]["DIV"].ondblclick = function() {
+this.style.display = "none";
+};
+pencere["Göster - Gizle"] = function (){
+ if (this["Sürgü"]["DIV"].style.display == "") {
+  this["Sürgü"]["DIV"].style.display = "none";
+ } else {
+  this["Sürgü"]["DIV"].style.display = "";
+ }
+};
+pencere["Sürgü"]["Kur"](g,u,0,0);
+pencere["DIV_2"] = ATA["Belge Nesnesi"]("DIV",pencere["DIV"]);
+pencere["DIV_2"].style.position = "absolute";
+pencere["DIV_2"].style.left = "0px";
+pencere["DIV_2"].style.top = "0px";
+pencere["DIV_2"].style.width = "7px";
+pencere["DIV_2"].style.height = "7px";
+pencere["DIV_2"].style.backgroundColor = "black";
+pencere["DIV_2"].style.overflow = 'hidden';
+pencere["DIV_2"].style.filter = "alpha(opacity=60)";
+pencere["DIV_2"].info = "" + pencere["Kimlik"] + "";
+pencere["DIV_2"].onclick = function(){
+ATA["Belge Araçlarý"]["Sürgülü Kutular"][this.info]["Göster - Gizle"]();
+};
+pencere["Sürgü"]["PK"] = pencere;
+pencere["Sürgü"]["Ýþlev"] = function(x,y){
+this["PK"]["Kaydýr"](x,y);
+};
+
+pencere["Kaydýr"] = function(x,y) {
+ if (x<=1 && y<=1 && x>=0 && y>=0) {
+  x *= this["Gövde"].scrollWidth - this["Gövde"].clientWidth;
+  y *= this["Gövde"].scrollHeight - this["Gövde"].clientHeight;
+ }
+this["Gövde"].scrollLeft = x;
+this["Gövde"].scrollTop = y;
+};
+
+
+ATA["Belge Araçlarý"]["Sürgülü Kutular"][pencere["Kimlik"]] = pencere;
+return pencere;
+};
+
+var enn = ATA["Belge Araçlarý"]["Sürügülü Kutu"](document.body,500,500,10,10);
+
+</SCRIPT>
+</BODY>

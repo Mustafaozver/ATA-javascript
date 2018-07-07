@@ -1,0 +1,102 @@
+<HTML xmlns:ATA ="urn:schemas-microsoft-com:vml">
+<HEAD>
+<TITLE>3B</TITLE>
+<SCRIPT LANGUAGE="JScript" type="text/javascript" src="ATA/ATA.JS"></SCRIPT>
+<STYLE>
+ATA\:*		{ behavior:url(#default#VML); }
+</STYLE>
+</HEAD>
+<BODY background="Resimler\Arka\1.jpg">
+
+<SCRIPT LANGUAGE="JScript" type="text/javascript" src="ATA/ATA.0.JS"></SCRIPT>
+<SCRIPT LANGUAGE="JScript" type="text/javascript" src="ATA0/0.TXT"></SCRIPT>
+<SCRIPT LANGUAGE="JScript" type="text/javascript">
+
+ATA["Belge Araçlarý"]["Döngülü Sürgü Sayýsý"] = 0;
+ATA["Belge Araçlarý"]["Döngülü Sürgüler"] = {};
+ATA["Belge Araçlarý"]["Döngülü Sürgü"] = function(gov,g,u,x,y){
+var nesne = {};
+nesne["Kimlik"] = "DONSUR_" + ATA["Rastgele"](11,1,false) + "_" + ATA["Belge Araçlarý"]["Döngülü Sürgü Sayýsý"] + "";
+ATA["Belge Araçlarý"]["Döngülü Sürgü Sayýsý"]++;
+
+nesne["DIV"] = ATA["Belge Nesnesi"]("DIV",gov);
+nesne["DIV"].id = nesne["Kimlik"] + "_DIV";
+nesne["DIV"].style.position = "absolute";
+nesne["DIV"].style.left = x + "px";
+nesne["DIV"].style.top = y + "px";
+nesne["DIV"].style.width = g + "px";
+nesne["DIV"].style.height = u + "px";
+nesne["Boyut"] = [g,u];
+
+nesne["OVAL"] = ATA["Belge Nesnesi"]("ATA:OVAL",nesne["DIV"]);
+nesne["OVAL"].style.position = "absolute";
+nesne["OVAL"].style.left = "0px";
+nesne["OVAL"].style.top = "0px";
+nesne["OVAL"].style.width = "100%";
+nesne["OVAL"].style.height = "100%";
+nesne["OVAL"].style.behavior = "url(#default#VML)";
+nesne["OVAL"].filled = "t";
+nesne["OVAL"].fillcolor = "#ffffff";
+nesne["OVAL"].stroked = "t";
+nesne["OVAL"].strokecolor = "#ebebeb";
+nesne["OVAL"].id = nesne["Kimlik"] + "_OVAL";
+
+nesne["IMGa"] = ATA["Belge Nesnesi"]("IMG",nesne["DIV"]);
+nesne["IMGa"].style.left = "0px";
+nesne["IMGa"].style.top = "0px";
+nesne["IMGa"].style.position = "absolute";
+nesne["IMGa"].style.width = "106%";
+nesne["IMGa"].style.height = "106%";
+nesne["IMGa"].src = "Resimler/pencere/on.png";
+nesne["IMGa"].id = nesne["Kimlik"] + "_IMGa";
+
+nesne["IMG0"] = ATA["Belge Nesnesi"]("IMG",nesne["DIV"]);
+nesne["IMG0"].src = "Resimler/0/Surdon.png";
+nesne["IMG0"].style.position = "absolute";
+nesne["IMG0"].style.height = "11px";
+nesne["IMG0"].style.width = "11px";
+
+nesne["Deðer Gir"] = function(deg) {
+deg = (deg<0)?0:deg;
+deg = (deg>1)?1:deg;
+this["Deðer"] = deg;
+this["OVAL"].fillcolor = ATA["Renge Çevir"](270-deg*250,deg*200+60,deg*250-170);
+this["OVAL"].strokecolor = ATA["Renge Çevir"](230-deg*250,deg*200+20,deg*250-210);
+var deg1 = deg*360;
+var sindeg1 = ATA["Hesaplama"]["Dikey Kat"](deg1);
+var cosdeg1 = ATA["Hesaplama"]["Yatay Kat"](deg1);
+this["IMG0"].style.left = (this["Boyut"][0]/2-6+cosdeg1*this["Boyut"][0]/2.6) + "px";
+this["IMG0"].style.top = (this["Boyut"][1]/2-6+sindeg1*this["Boyut"][1]/2.6) + "px";
+
+};
+nesne["Deðer Gir"](1);
+ATA["Belge Araçlarý"]["Döngülü Sürgüler"][nesne["Kimlik"]] = nesne;
+return nesne;
+};
+
+var ty = 0;
+function ttyuo() {
+e["Deðer Gir"](ty/1000);
+s["Deðer Gir"](ty/1000);
+ if (ty < 10) {
+  document.all.bbbbba.innerText = "Þimdiki Deðeri : 00"+ty+"/1000";
+ } else if (ty < 100) {
+  document.all.bbbbba.innerText = "Þimdiki Deðeri : 0"+ty+"/1000";
+ } else if (ty < 1000) {
+  document.all.bbbbba.innerText = "Þimdiki Deðeri : "+ty+"/1000";
+ }
+ if (ty>1000) {
+  ty = 0;
+  setTimeout("ttyuo()",10);
+ } else {
+  ty++;
+  setTimeout("ttyuo()",10);
+ }
+}
+
+var e = ATA["Belge Araçlarý"]["Döngülü Sürgü"](document.body,100,100,100,100);
+var s = ATA["Belge Araçlarý"]["Gösterge"](document.body,400,20,200,100,0,0);
+
+</SCRIPT>
+</BODY><font id="bbbbbb"></font><br><font id="bbbbba"></font><br><input id=polinu><button onclick='e["Deðer Gir"](eval(document.all.polinu.value));s["Deðer Gir"](eval(document.all.polinu.value));'>Deðer Ver</button> <button onclick="ttyuo();">ttyuo</button>
+

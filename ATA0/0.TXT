@@ -1,0 +1,485 @@
+
+ATA["Pencere Düzeni"]["XYGU D"] = function() {
+ var xygud = [0,0,0,0,0];
+ return xygud;
+};
+
+ATA["Ýþleyiciler"] = {};
+ATA["Ýþleyiciler"]["Ýzin"] = function(isl,izin) {
+ if (izin == "") {
+  
+ }
+return 0;
+};
+
+ATA["Ýþleyiciler"]["Dizin"] = {};
+ATA["Ýþleyiciler"]["Ýþleyici Sayýsý"] = 0;
+
+ATA["Ýþleyiciler"]["Ýþleyici Oluþtur"] = function(dvb,deg) {
+var Ana = {};
+Ana["Getir"] = function(ev) {
+var izn = ATA["Ýþleyiciler"]["Ýzin"](this,ev);
+ if (izn == 1) {
+  return eval("ATA[\""+ATA["Hexi Çevir"](ev.split(" ").join("225D5B22"))+"\"]");
+ } else if (izn == 2) {
+  return eval(""+ATA["Hexi Çevir"](ev)+"");
+ }
+};
+Ana["Kimlik"] = "" + ATA["Rastgele"](20,1,false) + "_" + ATA["Ýþleyiciler"]["Ýþleyici Sayýsý"] + "";
+ATA["Ýþleyiciler"]["Ýþleyici Sayýsý"]++;
+Ana["Ýç Buyruk"] = "";
+Ana["Kök Dosya"] = "";
+Ana["Kök Dizin"] = "";
+Ana["Deðiþken"] = {};
+Ana.alert = null;
+Ana.window = null;
+Ana.ATA = null;
+Ana.document = null;
+Ana.confirm = null;
+Ana.prompt = null;
+Ana.ActiveXObject = null;
+Ana.Date = null;
+Ana.Error = null;
+Ana.eval = null;
+Ana.GetObject = null;
+Ana.Math = null;
+Ana.setInterval = null;
+Ana.setTimeout = null;
+Ana.screen = null;
+Ana["Deðiþken"]["0"] = {};
+Ana["Deðiþken"]["Oku"] = function(i) {
+ if (i) {
+  return this["0"]["" + i + ""];
+ } else {
+  return this["0"];
+ }
+};
+Ana["Durdurma Ýþlevi"] = function() {  };
+Ana["Hata Ýþlevi"] = function(e) {
+ if ((""+typeof(e)+"").toUpperCase() == "STRING") {
+  ATA["Pencere Düzeni"]["Hata Penceresi"]("" + e + "",function() {  });
+ } else {
+  ATA["Pencere Düzeni"]["Hata Penceresi"]("Ýþleyici Hatasý<br>&nbsp;Hata Ýletisi : \" " + e.description + " \"<br>",function() {  });
+ }
+};
+Ana["Baþla"] = function() {
+ try {
+  eval("with (ATA[\"Ýþleyiciler\"][\"Dizin\"][\"" + this["Kimlik"] + "\"]) {; " + this["Ýç Buyruk"] + " ;}");
+ } catch (e) {
+  this["Hata Ýþlevi"](e);
+  this["Durdur"]();
+ }
+};
+
+Ana["Durdur"] = function() {
+ this["Durdurma Ýþlevi"]();
+ ATA["Ýþleyiciler"]["Dizin"][this["Kimlik"]] = null;
+};
+
+Ana["Dosya Yükle"] = function(d,de) {
+ var dosya = ATA["Dosya Düzeni"]["Dosyaya Git"](d);
+ this["Kök Dosya"] = dosya["Yol"];
+ this["Kök Dizin"] = dosya["Bulunduðu Dizin"];
+ this["Ýç Buyruk"] = "" + ATA["Dosya Düzeni"]["Dosya Oku"](this["Kök Dosya"]) + "";
+ this["Deðiþken"]["0"] = de;
+};
+
+Ana["Buyruk Yükle"] = function(b,de) {
+ this["Ýç Buyruk"] = "" + b + "";
+ this["Kök Dosya"] = "";
+ this["Kök Dizin"] = "";
+ this["Deðiþken"]["0"] = de;
+};
+
+ if (deg) {
+ } else {
+  deg = {};
+ }
+
+Ana.Ana = Ana;
+ATA["Ýþleyiciler"]["Dizin"][Ana["Kimlik"]] = Ana;
+
+ if (ATA["Dosya Düzeni"]["Dosyaya Git"](dvb) == -1) {
+  Ana["Buyruk Yükle"](dvb,deg);
+  Ana["Baþla"]();
+ } else if (ATA["Dosya Düzeni"]["Dosyaya Git"](dvb)["Çeþit"] == "Dosya") {
+  Ana["Dosya Yükle"](dvb,deg);
+  Ana["Baþla"]();
+ }
+return Ana;
+};
+
+ATA["Pencere Düzeni"]["Pencere Arkasý Resmi"] = "Resimler/Pencere/pencere.png";
+ATA["Pencere Düzeni"]["Seçim Arkasý"] = "Resimler/Pencere/scm.png";
+ATA["Pencere Düzeni"]["Pencere Gövdesi Arkasý Resmi"] = "Resimler/Pencere/pencere.png";
+ATA["Pencere Düzeni"]["Yardým Tuþu"] = "Resimler/Pencere/y.png";
+ATA["Pencere Düzeni"]["Yardým Tuþu Boyutu"] = 31;
+ATA["Pencere Düzeni"]["Küçültme Tuþu"] = "Resimler/Pencere/kc.png";
+ATA["Pencere Düzeni"]["Küçültme Tuþu Boyutu"] = 31;
+ATA["Pencere Düzeni"]["Tam Boyut - Küçük Boyut Tuþu"] = "Resimler/Pencere/t.png";
+ATA["Pencere Düzeni"]["Tam Boyut - Küçük Boyut Tuþu Boyutu"] = 31;
+ATA["Pencere Düzeni"]["Kapatma Tuþu"] = "Resimler/Pencere/k.png";
+ATA["Pencere Düzeni"]["Kapatma Tuþu Boyutu"] =  31;
+ATA["Pencere Düzeni"]["Boyutlama Sürgüsü"] = "Resimler/Pencere/bos.png";
+ATA["Pencere Düzeni"]["Görev Çubuðu Yüksekliði"] = 63;
+ATA["Pencere Düzeni"]["Görev Çubuðu Arka"] = "Resimler/Pencere/tsk.jpg";
+ATA["Pencere Düzeni"]["Masaüstü Simge Büyüklüðü"] = 32;
+ATA["Kullanýcý"] = "";
+ATA["Kullanýcý Dizini"] = "";
+
+ATA["Pencere Düzeni"]["Ses"] = ATA["Belge Nesnesi"]("BGSOUND",ATA["Gövde"]);
+ATA["Pencere Düzeni"]["Ses"].volume = "-3000";
+ATA["Pencere Düzeni"]["Ses"].src = "";
+ATA["Pencere Düzeni"]["Ses"].loop = 1;
+
+ATA["Pencere Düzeni"]["Ses Ata"] = function(oKon) {
+ATA["Pencere Düzeni"]["Ses"].src = "" + oKon + "";
+};
+
+ATA["Pencere Düzeni"]["Ses Ayar"] = function(oAyr) {
+oAyr = (oAyr>100)?100:oAyr;
+oAyr = (oAyr<0)?0:oAyr;
+ATA["Pencere Düzeni"]["Ses"].volume = "" + (30*oAyr-3000) + "";
+};
+ 
+ATA["Masa Arkasý"] = ATA["Belge Nesnesi"]("DIV",ATA["Gövde"]);
+ATA["Masa Arkasý"].style.position = "absolute";
+ATA["Masa Arkasý"].style.left = "-5px";
+ATA["Masa Arkasý"].style.top = "-5px";
+ATA["Masa Arkasý"].style.height = (screen.height+10) + "px";
+ATA["Masa Arkasý"].style.width = (screen.width+10) + "px";
+ATA["Masa Arkasý"].style.backgroundImage = "url(Resimler/Arka/ata.jpg)";
+ATA["Masa Arkasý"].style.backgroundRepeat = "no-repeat";
+ATA["Masa Arkasý"].style.backgroundPosition = "center";
+
+ATA["Pencere Düzeni"]["Masa Üstü Arkasýný Ata"] = function(k) {
+ATA["Masa Arkasý"].style.backgroundImage = "url(" + k + ")";
+};
+
+ATA["Pencere Düzeni"]["Fare Bilgisi"] = {};
+ATA["Pencere Düzeni"]["Fare Bilgisi"]["BFont"] = ATA["Belge Nesnesi"]("FONT",ATA["Gövde"]);
+ATA["Pencere Düzeni"]["Fare Bilgisi"]["BFont"].style.display = "none";
+ATA["Pencere Düzeni"]["Fare Bilgisi"]["BFont"].style.border = "1px solid white";
+ATA["Pencere Düzeni"]["Fare Bilgisi"]["BFont"].style.color = "white";
+ATA["Pencere Düzeni"]["Fare Bilgisi"]["BFont"].style.zIndex = 0;
+ATA["Pencere Düzeni"]["Fare Bilgisi"]["BFont"].style.backgroundImage = "url(" + ATA["Pencere Düzeni"]["Pencere Arkasý Resmi"] + ")";
+ATA["Pencere Düzeni"]["Fare Bilgisi"]["BFont"].style.position = "absolute";
+ATA["Pencere Düzeni"]["Fare Bilgisi"]["BFont"].onmousemove = function() {
+ATA["Pencere Düzeni"]["Fare Bilgisi"]["Bilgi Ata"]("");
+};
+ATA["Pencere Düzeni"]["Fare Bilgisi"]["BÝ"] = ATA["Belge Nesnesi"]("FONT",ATA["Pencere Düzeni"]["Fare Bilgisi"]["BFont"]);
+ATA["Pencere Düzeni"]["Fare Bilgisi"]["Bilgi Ata"] = function(oBil) {
+ if (oBil) {
+  var fk = ATA["Hareket Konumu"]();
+  this["BFont"].style.left = (fk[0]+20) + "px";
+  this["BFont"].style.top = (fk[1]+20) + "px";
+  if (this["BÝ"].innerText == (" "+oBil+" ") && this["BFont"].style.display == "") {
+   return;
+  }
+  this["BÝ"].innerText = " " + oBil + " ";
+  this["BFont"].style.zIndex = ATA["Pencere Düzeni"]["ZIn"] + 2000;
+  this["BFont"].style.display = "";
+  window.setTimeout("if (ATA[\"Pencere Düzeni\"][\"Fare Bilgisi\"][\"BFont\"].style.display == \"\" && ATA[\"Pencere Düzeni\"][\"Fare Bilgisi\"][\"BÝ\"].innerText == \"" + this["BÝ"].innerText + "\") { ATA[\"Pencere Düzeni\"][\"Fare Bilgisi\"][\"Bilgi Ata\"](\"\") }",3000);
+ } else {
+  this["BÝ"].innerText = "";
+  this["BFont"].style.display = "none";
+  this["BFont"].style.left = "0px";
+  this["BFont"].style.top = "0px";
+ }
+};
+
+ATA["Pencere Düzeni"]["ATA Açýlýþ"] = ATA["Belge Nesnesi"]("DIV",ATA["Gövde"]);
+ATA["Pencere Düzeni"]["ATA Açýlýþ"].style.position = "absolute";
+ATA["Pencere Düzeni"]["ATA Açýlýþ"].style.left = "0px";
+ATA["Pencere Düzeni"]["ATA Açýlýþ"].style.top = "0px";
+ATA["Pencere Düzeni"]["ATA Açýlýþ"].style.width = "100%";
+ATA["Pencere Düzeni"]["ATA Açýlýþ"].style.height = "100%";
+
+var ATASimge = ATA["Belge Nesnesi"]("IMG",ATA["Pencere Düzeni"]["ATA Açýlýþ"]);
+ATASimge.src = "Resimler/0/ata.png";
+ATASimge.style.position = "absolute";
+ATASimge.style.left = "7px";
+ATASimge.style.bottom = "7px";
+ATASimge.style.width = "102px";
+ATASimge.style.height = "77px";
+
+var ATAOturum = ATA["Belge Nesnesi"]("DIV",ATA["Pencere Düzeni"]["ATA Açýlýþ"]);
+ATAOturum.style.position = "absolute";
+ATAOturum.style.width = "600px";
+ATAOturum.style.height = "150px";
+ATAOturum.style.left = (ATA["Pencere Düzeni"]["Pencere En Büyük Geniþlik"]-600)/2 + "px";
+ATAOturum.style.top = (ATA["Pencere Düzeni"]["Pencere En Büyük Uzunluk"]-150)/2 + "px";
+ATAOturum.style.backgroundImage = "url(" + ATA["Pencere Düzeni"]["Pencere Arkasý Resmi"] + ")";
+ATAOturum.style.border = "window 1px outset";
+ATAOturum.innerHTML = "<table style=\"width:100%;height:100%;\"><tr><td><center><input style=\"width:60%;\" id=kullanici><br><input style=\"width:60%;\" type=password id=sifre><br><button  style=\"width:60%;\" onclick='\ATA[\"Pencere Düzeni\"][\"Oturum Aç\"]();\'>TAMAM</button></center></td></tr></table>";
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ATA["Pencere Düzeni"]["Oturum Aç"] = function() {
+var oKull = ATA["Belge"].all.kullanici.value;
+var oSif = ATA["Belge"].all.sifre.value;
+
+if (oKull != "ABX0C" && oSif != "AB0XC") {
+  if (oSif == "") {
+   ATA["Pencere Düzeni"]["Uyarý Penceresi"]("Þifre Girilmedi.");
+   return;
+  }
+  if (ATA["Dosya ve Dizin Düzeni"].FileExists("EV\\" + oKull + "\\" + oKull + "_ATA.txt")) {
+  alert("\""+ATA["Dosya Oku"]("EV\\" + oKull + "\\" + oKull + "_ATA.txt").split("\n")[0] +"\"\n\""+ oSif + "\"");
+   if (eval(ATA["Dosya Oku"]("EV\\" + oKull + "\\" + oKull + "_ATA.txt").split("\n")[0]) == oSif) {
+    ATA["Kullanýcý"] = eval(ATA["Dosya Oku"]("EV\\" + oKull + "\\" + oKull + "_ATA.txt").split("\n")[1]);
+    ATA["Kullanýcý Dizini"] = "EV\\" + oKull + "";
+   } else {
+    ATA["Pencere Düzeni"]["Uyarý Penceresi"]("Geçersiz þifre.");
+    return;
+   }
+  } else {
+   ATA["Pencere Düzeni"]["Uyarý Penceresi"]("Geçersiz kullanýcý adý.");
+   return;
+  }
+ } else {
+  ATA["Pencere Düzeni"]["Uyarý Penceresi"]("Sabit Oturumla Açýldý.");
+  ATA["Kullanýcý"] = "ATA";
+  ATA["Kullanýcý Dizini"] = "EV\\ATA";
+  ATA["Masa Arkasý"].style.display = "";
+ }
+
+ATA["Pencere Düzeni"]["Ses Ayar"](100);
+ATA["Pencere Düzeni"]["Görev Çubuðu"] = {};
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV"] = ATA["Belge Nesnesi"]("DIV",ATA["Gövde"]);
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV"].style.position = "absolute";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV"].style.width = screen.width + "px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV"].style.height = ATA["Pencere Düzeni"]["Görev Çubuðu Yüksekliði"] + "px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV"].style.top = "0px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV"].style.left = "0px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV"].style.backgroundImage = "url(" + ATA["Pencere Düzeni"]["Görev Çubuðu Arka"] + ")";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV"].style.filter = "alpha(opacity=30)";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV_2"] = ATA["Belge Nesnesi"]("DIV",ATA["Gövde"]);
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV_2"].style.position = "absolute";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV_2"].style.width = screen.width + "px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV_2"].style.height = ATA["Pencere Düzeni"]["Görev Çubuðu Yüksekliði"] + "px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV_2"].style.top = "0px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV_2"].style.left = "0px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["DIV_2"].style.backgroundImage = "url(" + ATA["Pencere Düzeni"]["Pencere Arkasý Resmi"] + ")";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"] = ATA["Belge Araçlarý"]["Tuþ Oluþtur"](ATA["Gövde"],"ATA","ATA",100,100,-5,-18);
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["Etkinleþtir"] = function() {
+this["DIV_3"].style.zIndex = 20;
+this["DIV_2"].style.zIndex = 10;
+this["Etkinlik"] = 1;
+};
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["Etkisizleþtir"] = function() {
+this["DIV_3"].style.zIndex = 10;
+this["DIV_2"].style.zIndex = 20;
+this["Etkinlik"] = 0;
+};
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["DIV_3"].style.filter = "";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["DIV"].style.border = "none";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["DIV_2"].style.backgroundImage = "url(Resimler/Pencere/on.png)";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["DIV_2"].style.backgroundRepeat = "no-repeat";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["DIV_3"].style.backgroundImage = "";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["Fare Dýþ Þeffaflýðý"] = 0.4;
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["IMG"] = ATA["Belge Nesnesi"]("IMG",ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["DIV"]);
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["IMG"].style.width = "100%";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["IMG"].style.height = "100%";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["IMG"].src = "Resimler/Pencere/scn.png";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["DIV_3"].onmouseover = function() {
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["IMG"].style.filter = "";
+ATA["Ýmleç Ata"](1);
+};
+
+ATA["Ýþleyiciler"]["Ýþleyici Oluþtur"]("ATA0\\ATA.0\\0.JS",{"ATA":ATA,"Kip":0});
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["DIV_3"].onmouseout = function() {
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["IMG"].style.filter = "alpha(opacity=30)";
+ATA["Ýmleç Ata"](0);
+};
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["Ýþlev"] =  function() {
+ this["ATA"]["DIV"].style.display = "";
+ this["ATA"]["DIV"].style.zIndex = 1000 + ATA["Pencere Düzeni"]["ZIn"];
+};
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Nesne Alaný"] = ATA["Belge Nesnesi"]("DIV",ATA["Gövde"]);
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Nesne Alaný"].style.position = "absolute";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Nesne Alaný"].style.width = (screen.width-208) + "px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Nesne Alaný"].style.height = (ATA["Pencere Düzeni"]["Görev Çubuðu Yüksekliði"]-8) + "px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Nesne Alaný"].style.top = "4px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Nesne Alaný"].style.left = "100px";
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Bildirim Alaný"] = ATA["Belge Nesnesi"]("DIV",ATA["Gövde"]);
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Bildirim Alaný"].style.position = "absolute";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Bildirim Alaný"].style.width = "100px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Bildirim Alaný"].style.height = (ATA["Pencere Düzeni"]["Görev Çubuðu Yüksekliði"]-8) + "px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Bildirim Alaný"].style.top = "4px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Bildirim Alaný"].style.right = "4px";
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["_Araç Alaný"] = ATA["Belge Nesnesi"]("DIV",ATA["Gövde"]);
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["_Araç Alaný"].style.position = "absolute";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["_Araç Alaný"].style.width = "180px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["_Araç Alaný"].style.height = (screen.height-ATA["Pencere Düzeni"]["Görev Çubuðu Yüksekliði"]) + "px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["_Araç Alaný"].style.right = "0px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["_Araç Alaný"].style.bottom = "0px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["_Araç Alaný"].style.backgroundColor = "black";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["_Araç Alaný"].style.filter = "alpha(opacity=30)";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Araç Alaný"] = ATA["Belge Nesnesi"]("DIV",ATA["Gövde"]);
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Araç Alaný"].style.position = "absolute";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Araç Alaný"].style.width = "180px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Araç Alaný"].style.height = (screen.height-ATA["Pencere Düzeni"]["Görev Çubuðu Yüksekliði"]) + "px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Araç Alaný"].style.right = "0px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Araç Alaný"].style.bottom = "0px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Araç Alaný"].style.backgroundImage = "url(" + ATA["Pencere Düzeni"]["Pencere Arkasý Resmi"] + ")";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Araç Alaný"].style.backgroundPositionX = 180-screen.width;
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Araç Alaný"].style.backgroundPositionY = -ATA["Pencere Düzeni"]["Görev Çubuðu Yüksekliði"];
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Saat"] = ATA["Belge Araçlarý"]["Saat"](ATA["Pencere Düzeni"]["Görev Çubuðu"]["Araç Alaný"],100,100);
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"] = {};
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"] = ATA["Belge Nesnesi"]("DIV",ATA["Gövde"]);
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"].style.position = "absolute";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"].style.left = "0px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"].style.top = "0px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"].style.width = ATA["Pencere Düzeni"]["Pencere En Büyük Geniþlik"] + "px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"].style.height = ATA["Pencere Düzeni"]["Pencere En Büyük Uzunluk"] + "px";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"].style.border = "none";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"].style.backgroundColor = "#004080";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"].style.display = "none";
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"].onclick = function() {
+this.style.display = "none";
+};
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"].ontouchstart =ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"].onclick;
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["Ekle"] = function(oAcik,Sim) {
+var Ana = ATA["Belge Araçlarý"]["Tuþ Oluþtur"](this["DIV"],"",""+oAcik+"",ATA["Pencere Düzeni"]["Masaüstü Simge Büyüklüðü"],ATA["Pencere Düzeni"]["Masaüstü Simge Büyüklüðü"]);
+Ana["DIV_3"].style.backgroundImage = "";
+Ana["DIV_2"].style.backgroundImage = "";
+Ana["DIV"].style.position = "relative";
+Ana["DIV"].style.border = "none";
+
+Ana["DIV_3"].onmouseover = function() {
+var nesne = ATA["Belge Araçlarý"]["" + this.id.replace("_DIV_3","") + ""];
+nesne["DIV_2"].style.backgroundImage = "url(" + ATA["Pencere Düzeni"]["Pencere Arkasý Resmi"] + ")";
+ATA["Ýmleç Ata"](1);
+};
+
+Ana["DIV_3"].onmouseout = function() {
+var nesne = ATA["Belge Araçlarý"]["" + this.id.replace("_DIV_3","") + ""];
+nesne["DIV_2"].style.backgroundImage = "";
+ATA["Ýmleç Ata"](0);
+};
+
+Ana["IMG"] = ATA["Belge Nesnesi"]("IMG",Ana["DIV_3"]);
+Ana["IMG"].style.width = "100%";
+Ana["IMG"].style.height = "100%";
+Ana["IMG"].src = ""+Sim+"";
+
+return Ana;
+};
+
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["Ekle"]("Geri","Resimler/0/3.png")["Ýþlev"] = function () {
+ ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"].style.display = "none";
+};
+
+ATA["Belge Nesnesi"]("BR",ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"]);
+ATA["Belge Nesnesi"]("BR",ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"]);
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["Ekle"]("Buyur","Resimler/0/Oldu.png")["Ýþlev"] = function() {
+ATA["Pencere Düzeni"]["Ýstem Penceresi"]("Buyruk","Düzene koþulacak olan buyruðu girin.","",function() { eval(this["Çýktý"]) },1);
+};
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["Ekle"]("Kapat","Resimler/0/8.png")["Ýþlev"] = function() {
+ATA["Pencere Düzeni"]["Soru Penceresi"]("Düzeni kapatmak istediðinizden eminmisiniz?",function() { if(this["Çýktý"] == 1) { window.close() } ;});
+};
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["Ekle"]("Bilgiayarý Kapat","Resimler/0/8.png")["Ýþlev"] = function() {
+ATA["Pencere Düzeni"]["Soru Penceresi"]("Düzeni kapatmak istediðinizden eminmisiniz?",function() { if(this["Çýktý"] == 1) { ATA["Bilgisayardan Çýk"]() } ;});
+};
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["Ekle"]("Bilgisayarý Yeniden Baþlat","Resimler/0/8.png")["Ýþlev"] = function() {
+ATA["Pencere Düzeni"]["Soru Penceresi"]("Düzeni kapatmak istediðinizden eminmisiniz?",function() { if(this["Çýktý"] == 1) { ATA["Bilgisayardan Çýk"](2) } ;});
+};
+
+ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["Ekle"]("Hazýrda Beklet","Resimler/0/8.png")["Ýþlev"] = function() {
+ATA["Pencere Düzeni"]["Soru Penceresi"]("Düzeni kapatmak istediðinizden eminmisiniz?",function() { if(this["Çýktý"] == 1) { ATA["Bilgisayardan Çýk"](3) } ;});
+};
+
+
+ATA["Belge Nesnesi"]("BR",ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"]);
+ATA["Belge Nesnesi"]("BR",ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"]);
+ATA["Belge Nesnesi"]("BR",ATA["Pencere Düzeni"]["Görev Çubuðu"]["Seçenekler"]["ATA"]["DIV"]);
+
+ATA["Pencere Düzeni"]["Oturum Aç"] = null;
+ATA["Pencere Düzeni"]["ATA Açýlýþ"].style.display = "none";
+};
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ATA["Ýþleyiciler"]["Dizin"]["GEZGÝN"] = {};
+ATA["Ýþleyiciler"]["Dizin"]["GEZGÝN"]["Kimlik"] = "GEZGÝN";
+ATA["Ýþleyiciler"]["Dizin"]["GEZGÝN"]["Hata Ýþlevi"] = function(e) {
+ ATA["Pencere Düzeni"]["Hata Penceresi"]("Gezgin Hatasý : \n\"" + e + "\"",function() {  });
+};
+
+ATA["Ýþleyiciler"]["Dizin"]["GEZGÝN"]["Baþla"] = function(d) {
+var pencere = ATA["Pencere Düzeni"]["Pencere Aç"]("Gezgin","Resimler/Simgeler/dizin.png",200,200,300,240,1,1,1,0);
+pencere["Baþlýk"].style.display = "none";
+pencere["Gövde"].style.backgroundImage = "";
+pencere["GEZGÝN"] = this;
+pencere["Gövde"].style.backgroundColor = "";
+pencere["Giriþ"] = ATA["Belge Araçlarý"]["Giriþ Ýþlemi"]["Yazýt Giriþi"](pencere["Gövde"],"",300,20,5,5,0,0);
+pencere["Git"] = ATA["Belge Araçlarý"]["Tuþ Oluþtur"](pencere["Gövde"],"Git","Dizine Git",40,20,310,5);
+pencere["Git"]["Pencere"] = pencere;
+pencere["Simge Ýli"] = ATA["Belge Nesnesi"]("FONT",pencere["Gövde"]);
+pencere["Simge Ýli"].style.position = "absolute";
+pencere["Simge Ýli"].style.left = "5px";
+pencere["Simge Ýli"].style.top = "30px";
+pencere["Simge Ýli"].style.border = "1px solid red";
+pencere["Simgeler"] = {};
+pencere["Simge Sayýsý"] = 0;
+pencere["Simge"] = function() {
+var smg = {};
+smg["Kimlik"] = "SMG_" + ATA["Rastgele"](11,1,false) + "_" + this["Simge Sayýsý"] + "";
+this["Simge Sayýsý"]++;
+
+//1234567890//
+
+this["Simgeler"][smg["Kimlik"]] = smg;
+return smg;
+};
+
+pencere["Git"]["Ýþlev"] = function() {
+this["Pencere"]["Araþtýr"](this["Pencere"]["Giriþ"]["Deðer Oku"]());
+};
+pencere["Araþtýr"] = function(d) {
+ if (ATA["Dosya Düzeni"]["Dosyaya Git"](d)["Çeþit"] == "Dosya") { this["GEZGÝN"]["Hata Ýþlevi"]("Yol Dizin Deðil.");return; }
+this["Dizin"] = ATA["Dosya Düzeni"]["Dosyaya Git"](d);
+ if (this["Dizin"] == -1) { this["GEZGÝN"]["Hata Ýþlevi"]("Yol Bulunamadý.");return; }
+this["Giriþ"]["Deðer Gir"](this["Dizin"]["Yol"]);
+this["Simgeler"] = {};
+this["Simge Sayýsý"] = 0;
+this["Simge"](this["Dizin"]);
+
+//1234567890//
+
+};
+
+pencere["Araþtýr"](d);
+return pencere;
+};
+
+ATA["Ýþleyiciler"]["Dizin"]["GEZGÝN"]["Baþla"]("c:\\windows\\");
+
+var e = ATA["Dosya Düzeni"]["Ögeleri Araþtýr"]("Resimler\\Arka")["Dosyalar"].length;
+ATA["Pencere"].setInterval("ATA[\"Pencere Düzeni\"][\"Masa Üstü Arkasýný Ata\"](ATA[\"Dosya Düzeni\"][\"Ögeleri Araþtýr\"](\"Resimler\\\\Arka\" )[\"Dosyalar\"][Math.floor(Math.random()*"+e+")][\"Yol\"]);",300000); // Restgele Resim //
+ATA["Pencere"].setInterval("ATA[\"Pencere Düzeni\"][\"Görev Çubuðu\"][\"Saat\"][\"Güncelle\"]();",1000);
+
+ATA["Ýþleyiciler"]["Dizin"]["GEZGÝN"]["Simge Ýli"] = ATA["Belge Nesnesi"]("FONT",ATA["Gövde"]);
+ATA["Ýþleyiciler"]["Dizin"]["GEZGÝN"]["Simge Ýli"].style.position = "absolute";
+ATA["Ýþleyiciler"]["Dizin"]["GEZGÝN"]["Simge Ýli"].style.left = ATA["Pencere Düzeni"]["X_0"] + "px";
+ATA["Ýþleyiciler"]["Dizin"]["GEZGÝN"]["Simge Ýli"].style.top = ATA["Pencere Düzeni"]["Y_0"] + "px";
+ATA["Ýþleyiciler"]["Dizin"]["GEZGÝN"]["Simge Ýli"].style.width = (ATA["Pencere Düzeni"]["En Geniþ"]-180) + "px";
+ATA["Ýþleyiciler"]["Dizin"]["GEZGÝN"]["Simge Ýli"].style.height = ATA["Pencere Düzeni"]["En Uzun"] + "px";
+ATA["Ýþleyiciler"]["Dizin"]["GEZGÝN"]["Simge Ýli"].style.textAlign = "center";
+
